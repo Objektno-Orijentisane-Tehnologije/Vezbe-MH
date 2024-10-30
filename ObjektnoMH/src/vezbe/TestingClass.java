@@ -1,6 +1,9 @@
 package vezbe;
 
+import geometry.Circle;
+import geometry.Line;
 import geometry.Point;
+import geometry.Rectangle;
 
 public class TestingClass {
 
@@ -124,8 +127,46 @@ public class TestingClass {
 		
 		/* Od ove linije se koriste get i set metode */
 		p1.setX(30);
+//		System.out.println(p1);
+		
+		/*
+		 * =============================================
+		 * =============================================
+		 * 					VEZBE 4
+		 */
+		p2.setX(20);
+		Line l1 = new Line();
+		System.out.println("Vrednost startPoint-a je: " + l1.getStartPoint());
+		System.out.println("Vrednost endPoint-a je: " + l1.getEndPoint());
+		System.out.println("Vrednost selected-a je: " + l1.isSelected());
+//		l1.getStartPoint().getX(); OVDE NE FUNKCIONISE ZATO STO JE
+//		START POINT NULL
+		
+		l1.setStartPoint(p1);
+		System.out.println(l1.getStartPoint().getX());
+		
+		l1.setEndPoint(new Point());
+		System.out.println(l1.getEndPoint().getX());
+		
+		System.out.println(l1.length());
+		System.out.println(l1.getStartPoint().distance(l1.getEndPoint()));
+		
+		System.out.println(l1.getStartPoint());
 		System.out.println(p1);
 		
+		System.out.println(l1.getEndPoint());
+		System.out.println(new Point());
+		
+		Rectangle r1 = new Rectangle();
+		r1.setWidth(10);
+		r1.setHeight(20);
+		System.out.println(r1.area());
+		System.out.println(r1.circumference());
+		
+		Circle c1 = new Circle();
+		c1.setRadius(20);
+		System.out.println(c1.area());
+		System.out.println(c1.circumference());
 	}
 
 }

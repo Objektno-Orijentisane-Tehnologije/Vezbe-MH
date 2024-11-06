@@ -136,37 +136,60 @@ public class TestingClass {
 		 */
 		p2.setX(20);
 		Line l1 = new Line();
-		System.out.println("Vrednost startPoint-a je: " + l1.getStartPoint());
-		System.out.println("Vrednost endPoint-a je: " + l1.getEndPoint());
-		System.out.println("Vrednost selected-a je: " + l1.isSelected());
+//		System.out.println("Vrednost startPoint-a je: " + l1.getStartPoint());
+//		System.out.println("Vrednost endPoint-a je: " + l1.getEndPoint());
+//		System.out.println("Vrednost selected-a je: " + l1.isSelected());
 //		l1.getStartPoint().getX(); OVDE NE FUNKCIONISE ZATO STO JE
 //		START POINT NULL
 		
 		l1.setStartPoint(p1);
-		System.out.println(l1.getStartPoint().getX());
+//		System.out.println(l1.getStartPoint().getX());
 		
 		l1.setEndPoint(new Point());
-		System.out.println(l1.getEndPoint().getX());
-		
-		System.out.println(l1.length());
-		System.out.println(l1.getStartPoint().distance(l1.getEndPoint()));
-		
-		System.out.println(l1.getStartPoint());
-		System.out.println(p1);
-		
-		System.out.println(l1.getEndPoint());
-		System.out.println(new Point());
+//		System.out.println(l1.getEndPoint().getX());
+//		
+//		System.out.println(l1.length());
+//		System.out.println(l1.getStartPoint().distance(l1.getEndPoint()));
+//		
+//		System.out.println(l1.getStartPoint());
+//		System.out.println(p1);
+//		
+//		System.out.println(l1.getEndPoint());
+//		System.out.println(new Point());
 		
 		Rectangle r1 = new Rectangle();
 		r1.setWidth(10);
 		r1.setHeight(20);
-		System.out.println(r1.area());
-		System.out.println(r1.circumference());
-		
+//		System.out.println(r1.area());
+//		System.out.println(r1.circumference());
+//		
 		Circle c1 = new Circle();
 		c1.setRadius(20);
-		System.out.println(c1.area());
-		System.out.println(c1.circumference());
+//		System.out.println(c1.area());
+//		System.out.println(c1.circumference());
+		
+		/*
+		 * =============================================
+		 * =============================================
+		 * 					VEZBE 5
+		 */
+		
+		Point p3 = new Point(40,40);
+		System.out.println(p3.getX());
+		Line l2 = new Line(p3, new Point(20,20),true);
+		Rectangle r2 =  new Rectangle(p2, 50, 50);
+		Circle c2 = new Circle(new Point(35,35), 15);
+		System.out.println(p1);
+//		p1.toString();
+		r2.toString();
+		
+		Object testObject = new Circle(p3, 30);
+		
+//		testObject.area();
+		
+		
+		
+		
 	}
 
 }

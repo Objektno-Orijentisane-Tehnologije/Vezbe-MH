@@ -19,15 +19,33 @@ public class Line {
 		this(startPoint, endPoint);
 		this.selected = selected;
 	}
-	
+
 	public double length() {
 		return startPoint.distance(endPoint);
+	}
+	
+	public boolean contains(int x, int y) {
+		Point click = new Point(x,y);
+		return (startPoint.distance(click) + 
+				endPoint.distance(click)) - length() <= 2;
 	}
 	
 	@Override
 	public String toString() {
 		return "(" + startPoint.getX() + ", " + startPoint.getY() +
 				") --> (" + endPoint.getX() + ", " + endPoint.getY() + ")";
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Line) {
+			Line temp = (Line) o;
+			if(startPoint.equals(temp.getStartPoint()) &&
+					endPoint.equals(temp.getEndPoint())) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public Point getStartPoint() {

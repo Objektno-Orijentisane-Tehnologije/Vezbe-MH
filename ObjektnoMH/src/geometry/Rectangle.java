@@ -22,13 +22,22 @@ public class Rectangle {
 		this.selected = selected;
 	}
 	
-	
 	public int area() {
 		return width * height;
 	}
 	
 	public int circumference() {
 		return 2*height + 2*width;
+	}
+	
+	public boolean contains(int x, int y) {
+		return (x >= upperLeft.getX() && x <= upperLeft.getX()+width)
+				&&
+				(y >= upperLeft.getY() && y <= upperLeft.getY()+height);
+	}
+	
+	public boolean contains(Point p) {
+		return contains(p.getX(), p.getY());
 	}
 	
 	@Override
@@ -41,6 +50,17 @@ public class Rectangle {
 		return "Upper left point: (" + upperLeft.getX() + ", " +
 				upperLeft.getY() + "), width = " + width + ", height = " +
 				height;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Rectangle) {
+			Rectangle temp = (Rectangle) o;
+			if(width == temp.getWidth() && height == temp.getHeight()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public Point getUpperLeft() {

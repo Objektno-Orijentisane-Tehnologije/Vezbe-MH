@@ -187,8 +187,18 @@ public class TestingClass {
 		
 //		testObject.area();
 		
+		/*
+		 * =============================================
+		 * =============================================
+		 * 					VEZBE 6
+		 */
 		
-		
+		p1.setX(40);
+		p1.setY(40);
+		System.out.println(p1.equals(p3));
+		l1.getEndPoint().setX(15);
+		l1.getEndPoint().setY(20);
+		System.out.println(l1.equals(l2));
 		
 	}
 

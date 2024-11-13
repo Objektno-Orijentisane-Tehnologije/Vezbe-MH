@@ -20,6 +20,7 @@ public class Circle {
 		this.selected = selected;
 	}
 	
+	
 	public double area() {
 		return radius*radius*Math.PI;
 	}
@@ -28,10 +29,29 @@ public class Circle {
 		return 2*radius*Math.PI;
 	}
 	
+	public boolean contains(int x, int y) {
+		return center.distance(new Point(x,y)) <= radius;
+	}
+	
+	public boolean contains(Point p) {
+		return contains(p.getX(), p.getY());
+	}
+	
 	@Override
 	public String toString() {
 		return "Center: (" + center.getX() + ", " +
 				center.getY() + "), radius = " + radius;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Circle) {
+			Circle temp = (Circle) o;
+			if(radius == temp.getRadius()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public Point getCenter() {

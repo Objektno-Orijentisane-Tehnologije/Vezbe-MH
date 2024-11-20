@@ -1,6 +1,7 @@
 package vezbe;
 
 import geometry.Circle;
+import geometry.Donut;
 import geometry.Line;
 import geometry.Point;
 import geometry.Rectangle;
@@ -175,11 +176,11 @@ public class TestingClass {
 		 */
 		
 		Point p3 = new Point(40,40);
-		System.out.println(p3.getX());
+//		System.out.println(p3.getX());
 		Line l2 = new Line(p3, new Point(20,20),true);
 		Rectangle r2 =  new Rectangle(p2, 50, 50);
 		Circle c2 = new Circle(new Point(35,35), 15);
-		System.out.println(p1);
+//		System.out.println(p1);
 //		p1.toString();
 		r2.toString();
 		
@@ -193,12 +194,27 @@ public class TestingClass {
 		 * 					VEZBE 6
 		 */
 		
-		p1.setX(40);
-		p1.setY(40);
-		System.out.println(p1.equals(p3));
-		l1.getEndPoint().setX(15);
-		l1.getEndPoint().setY(20);
-		System.out.println(l1.equals(l2));
+//		p1.setX(40);
+//		p1.setY(40);
+//		System.out.println(p1.equals(p3));
+//		l1.getEndPoint().setX(15);
+//		l1.getEndPoint().setY(20);
+//		System.out.println(l1.equals(l2));
+		
+		/*
+		 * =============================================
+		 * =============================================
+		 * 					VEZBE 7
+		 */
+		
+//		Donut d1 = new Donut(30);
+		Donut d1 = new Donut(new Point(10,10), 30, 20, true);
+		System.out.println(d1 instanceof Circle);
+//		System.out.println(d1.getCenter());
+//		System.out.println(d1.getRadius());
+		System.out.println(d1);
+		c1.setRadius(30);
+		System.out.println(c1.equals(d1));
 		
 	}
 

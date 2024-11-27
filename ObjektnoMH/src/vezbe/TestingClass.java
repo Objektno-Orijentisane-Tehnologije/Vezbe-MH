@@ -3,6 +3,7 @@ package vezbe;
 import geometry.Circle;
 import geometry.Donut;
 import geometry.Line;
+import geometry.Moveable;
 import geometry.Point;
 import geometry.Rectangle;
 
@@ -215,6 +216,14 @@ public class TestingClass {
 		System.out.println(d1);
 		c1.setRadius(30);
 		System.out.println(c1.equals(d1));
+		
+		/*
+		 * =============================================
+		 * =============================================
+		 * 					VEZBE 8
+		 */
+//		Primer poziva ka statickoj konstanti
+//		System.out.println(Moveable.BROJ);
 		
 	}
 

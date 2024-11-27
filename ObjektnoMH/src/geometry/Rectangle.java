@@ -36,6 +36,16 @@ public class Rectangle extends Shape {
 		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
 	}
 	
+	@Override
+	public void moveTo(int x, int y) {
+		upperLeft.moveTo(x, y);
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeft.moveBy(byX, byY);
+	}
+	
 	public boolean contains(int x, int y) {
 		return (x >= upperLeft.getX() && x <= upperLeft.getX()+width)
 				&&
@@ -69,6 +79,15 @@ public class Rectangle extends Shape {
 		return false;
 	}
 	
+	@Override
+	public int compareTo(Shape o) {
+		if(o instanceof Rectangle) {
+		 Rectangle temp = (Rectangle) o;
+		 return this.area() - temp.area();
+		}
+		return 0;
+	}
+	
 	public Point getUpperLeft() {
 		return upperLeft;
 	}
@@ -92,6 +111,8 @@ public class Rectangle extends Shape {
 	public void setHeight(int height) {
 		this.height = height;
 	}
+
+	
 	
 	
 	

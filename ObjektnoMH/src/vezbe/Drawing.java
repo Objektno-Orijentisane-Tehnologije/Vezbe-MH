@@ -2,6 +2,7 @@ package vezbe;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,6 +12,7 @@ import geometry.Donut;
 import geometry.Line;
 import geometry.Point;
 import geometry.Rectangle;
+import geometry.Shape;
 
 public class Drawing extends JPanel {
 
@@ -30,14 +32,39 @@ public class Drawing extends JPanel {
 		Circle c1 = new Circle(new Point(500,500),40);
 		Donut d1 = new Donut(new Point(600,600),40,20);
 		
-		g.setColor(Color.RED);
-		p1.draw(g);
-		l1.draw(g);
-		r1.draw(g);
-		c1.draw(g);
-		d1.draw(g);
 		
 		g.setColor(Color.BLACK);
+		ArrayList<Shape> shapes = new ArrayList<Shape>();
+		shapes.add(p1);
+		shapes.add(l1);
+		shapes.add(c1);
+		shapes.add(d1);
+		shapes.add(r1);
+		
+//		for(Shape s: shapes) {
+//			s.draw(g);
+//		}
+		
+		g.setColor(Color.RED);
+//		for(Shape s: shapes) {
+//			s.moveBy(310, 0);
+//			s.draw(g);
+//		}
+		
+		for(Shape s: shapes) {
+			if(s instanceof Circle || s instanceof Rectangle) {
+				s.draw(g);
+			}
+		}
+		
+		
+//		p1.draw(g);
+//		l1.draw(g);
+//		r1.draw(g);
+//		c1.draw(g);
+//		d1.draw(g);
+		
+		
 		
 		
 		

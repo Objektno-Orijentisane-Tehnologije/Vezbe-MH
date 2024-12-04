@@ -1,5 +1,8 @@
 package vezbe;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import geometry.Circle;
 import geometry.Donut;
 import geometry.Line;
@@ -10,7 +13,7 @@ import geometry.Rectangle;
 public class TestingClass {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 //		int prviBroj = 16;
 //		int drugiBroj = 10;
@@ -166,7 +169,7 @@ public class TestingClass {
 //		System.out.println(r1.circumference());
 //		
 		Circle c1 = new Circle();
-		c1.setRadius(20);
+//		c1.setRadius(20);
 //		System.out.println(c1.area());
 //		System.out.println(c1.circumference());
 		
@@ -214,7 +217,12 @@ public class TestingClass {
 //		System.out.println(d1.getCenter());
 //		System.out.println(d1.getRadius());
 		System.out.println(d1);
-		c1.setRadius(30);
+		try {
+			c1.setRadius(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+//			throw new Exception(e.getMessage());
+		}
 		System.out.println(c1.equals(d1));
 		
 		/*
@@ -224,6 +232,80 @@ public class TestingClass {
 		 */
 //		Primer poziva ka statickoj konstanti
 //		System.out.println(Moveable.BROJ);
+		
+		
+		/*
+		 * =============================================
+		 * =============================================
+		 * 					VEZBE 9
+		 */
+//		Primer poziva ka statickoj konstanti
+//		System.out.println(Moveable.BROJ);
+		
+//		1. Nacin deklaracije niza - eksplicitni
+		int[] nizBrojeva = new int[5];
+		nizBrojeva[0] = 4;
+		nizBrojeva[1] = 5;
+		nizBrojeva[2] = 6;
+		nizBrojeva[3] = 7;
+		nizBrojeva[4] = 8;
+		
+//		2. Nacin deklaracije niza - implicitna duzina
+		int[] drugiNizBrojeva = {4,5,6,7,8};
+		
+		System.out.println("Trenutni redosled niza: ");
+		for(int i:drugiNizBrojeva) {
+			System.out.print(i + " ");
+		}
+		System.out.println("\nRedosled niza unazad: ");
+		for(int i = drugiNizBrojeva.length-1; i>=0 ; i--) {
+			System.out.print(drugiNizBrojeva[i] + " ");
+		}
+		
+		int[] treciNizBrojeva = {1,2,3,4,5,6,7,8,9,10};
+		System.out.println("\nStanje niza nakon mnozenja: ");
+		for(int i = 0; i<treciNizBrojeva.length; i++) {
+			treciNizBrojeva[i] *= 5;
+			System.out.print(treciNizBrojeva[i] + " ");
+		}
+		
+		HashMap<String, String> openWith = new HashMap<String,String>();
+		openWith.put("txt","notepad.exe");
+		openWith.put("bmp","paint.exe");
+		openWith.put("dib","paint.exe");
+		openWith.put("rtf","wordpad.exe");
+		
+		openWith.replace("rtf", "winword.exe");
+		if(!openWith.containsKey("tif")) {
+			System.out.println("Nije pronadjen kljuc \"tif\" ");
+		}
+		
+		if(!openWith.containsKey("ht")) {
+			openWith.put("ht", "hypertrm.exe");
+			System.out.println("Vrednost dodata kljucu = ht:" + 
+			openWith.get("ht"));
+		}
+		
+		for(Map.Entry<String, String> pair: openWith.entrySet()) {
+			System.out.println(pair);
+		}
+		
+		
+ 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
